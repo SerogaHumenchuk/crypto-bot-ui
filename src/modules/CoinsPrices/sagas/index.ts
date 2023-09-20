@@ -1,12 +1,19 @@
-import { call } from "redux-saga/effects";
+import { delay, put, takeLatest } from "redux-saga/effects";
 import { ISagaNoAction } from "../../../shared/interfaces";
-import axios from "axios";
+import { coinPricesActions } from "../reducer";
+import { getCoinPrices } from "./getCoinPrices";
+import { getAvailableExchangers } from "./getAvailableExchangers";
 
 export const coinsPricesRootSaga: ISagaNoAction = function* () {
-  yield call(axios.get, "http://localhost:3001/diffs", {
-    headers: { ["Content-Type"]: "application/json" },
-  });
-  yield call(axios.get, "http://localhost:3001/prices", {
-    headers: { ["Content-Type"]: "application/json" },
-  });
+  yield takeLatest(coinPricesActions.getCoinPrices.trigger, getCoinPrices);
+  yield takeLatest(
+    coinPricesActions.getAvailableExchangers.trigger,
+    getAvailableExchangers,
+  );
+  yield put(coinPricesActions.getAvailableExchangers.trigger());
+
+  while (true) {
+    yield put(coinPricesActions.getCoinPrices.trigger());
+    yield delay(5000);
+  }
 };
