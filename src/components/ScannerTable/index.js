@@ -56,7 +56,7 @@ export const ScannerTableRow = ({ pair, prices }) => {
         })}
       </TableRow>
       <TableRow>
-        <TableCell colSpan={8} className="full-table-cell">
+        <TableCell colSpan={exchangers.length + 1} className="full-table-cell">
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Table size="small" aria-label="purchases">
               <TableBody>
