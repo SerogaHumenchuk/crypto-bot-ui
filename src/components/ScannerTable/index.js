@@ -96,7 +96,7 @@ export const ScannerTableRow = ({ pair, prices }) => {
 export const ScannerTable = () => {
   const coinsPrices = useSelector(coinPricesSelector);
   const exchangers = useSelector(exchangersSelector);
-
+  console.log("exchangers ", exchangers);
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
       <TableContainer sx={{ maxHeight: "calc(100vh - 2rem)" }}>

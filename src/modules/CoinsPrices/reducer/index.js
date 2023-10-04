@@ -7,7 +7,7 @@ export const coinPricesActions = {
 };
 
 const initialState = {
-  exchangers: {},
+  exchangers: [],
   prices: {},
 };
 export const coinPricesReducer = createSlice({

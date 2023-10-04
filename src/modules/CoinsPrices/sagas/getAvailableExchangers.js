@@ -7,7 +7,7 @@ export const getAvailableExchangers = function* () {
     yield put(coinPricesActions.getAvailableExchangers.request());
     const { data } = yield call(
       axios.get,
-      "http://localhost:3001/available-exchangers",
+      "https://crypto-bot-api.onrender.com/available-exchangers",
       {
         headers: { ["Content-Type"]: "application/json" },
       },

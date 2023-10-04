@@ -14,6 +14,6 @@ export const coinsPricesRootSaga: ISagaNoAction = function* () {
 
   while (true) {
     yield put(coinPricesActions.getCoinPrices.trigger());
-    yield delay(5000);
+    yield delay(15000);
   }
 };
