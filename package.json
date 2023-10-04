@@ -1,7 +1,7 @@
 {
   "name": "crypto-bot",
   "version": "0.1.0",
-  "homepage": "https://SerogaHumenchuk.github.io/crypto-bot-ui",
+  "homepage": "https://serogahumenchuk.github.io/crypto-bot-ui",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
